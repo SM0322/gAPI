@@ -1,2 +1,38 @@
-<h1>Maps#index</h1>
-<p>Find me in app/views/maps/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">Map</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="map"></div>
+      
+      <style>
+        #map {
+            height: 200px;
+            width: 200px;
+        }
+      </style>
+      
+      <script>
+        let map
+        
+        function initMap(){
+            geocoder = new google.maps.Geocoder()
+            
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: 40.7828, lng: -73.9653},
+              zoom: 12,
+            });
+            
+            marker = new google.maps.Marker({
+              position: {lat: 40.7828, lng: -73.9653},
+              map: map
+            });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSDldjbAKxHnM7mLcCyG9uypT_u2HLCzc&callback=initMap" async defer></script>
+    </div>
+  </div>
+</div>
