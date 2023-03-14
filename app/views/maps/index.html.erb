@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md-12">
       <input id="address" type="textbox" value="GeekSalon">
-      <input id="button" value="Encode" onclick="codeAddress()">
+      <input type="button" value="Encode" onclick="codeAddress()">
     </div>
   </div>
   <div class="row">
@@ -41,7 +41,7 @@
         let geocoder
         
         function codeAddress(){
-          let inpututAddress = document.getElementById('address').value;
+          let inputAddress = document.getElementById('address').value;
           
           geocoder.geocode( { 'address': inputAddress}, function(results, status) {
             if(status == 'OK'){
